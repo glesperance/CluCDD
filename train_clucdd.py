@@ -1,19 +1,22 @@
+import argparse
+import copy
+import json
+import logging
+import os
+import random
+
+import numpy as np
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from transformers import AutoModel, AutoTokenizer
-import numpy as np
-import os
-import random
-import logging
-import utils
 from sklearn.cluster import KMeans
 from tqdm import tqdm
-import copy
-import argparse
-import json
+from transformers import AutoModel, AutoTokenizer
+
+import utils
 from dataload import TrainDataLoader
 from trainer import Trainer
+
 
 class RelationModel(nn.Module):
     def __init__(self, args, bert_model, hidden_size=768, n_layers=1, bidirectional=False, dropout=0):
