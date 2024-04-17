@@ -96,7 +96,7 @@ class Trainer(object):
 
 
     def train(self, train_loader, dev_loader):
-        self.plot(dev_loader)
+        # self.plot(dev_loader)
 
         writer = SummaryWriter('runs/' + self.args.savename)
         step_cnt = 0
